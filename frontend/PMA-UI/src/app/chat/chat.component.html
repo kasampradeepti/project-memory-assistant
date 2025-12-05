@@ -1,0 +1,38 @@
+<!-- <div class="chat-container">
+    <h2> AI assistant </h2>
+    <input [(ngModel)]="question" placeholder="Ask something... " class="input-box"/>
+    <button (click)="send()" class="btn">Ask</button>
+    <div *ngIf="response" class="response-box">
+        {{response}}
+    </div>
+</div>
+ -->
+
+ <div class="chat-wrapper">
+  
+  <h2 class="title">AI Assistant</h2>
+
+  <div class="chat-box" #scrollMe>
+
+    <div *ngFor="let msg of messages">
+
+      <!-- User message -->
+      <div *ngIf="msg.sender === 'user'" class="bubble user-bubble">
+        {{ msg.text }}
+      </div>
+
+      <!-- AI message -->
+      <div *ngIf="msg.sender === 'ai'" class="bubble ai-bubble">
+        {{ msg.text }}
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="input-area">
+    <input [(ngModel)]="question" placeholder="Ask something..." />
+    <button (click)="send()">Send</button>
+  </div>
+
+</div>
