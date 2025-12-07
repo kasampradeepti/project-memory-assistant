@@ -7,22 +7,22 @@
     </div>
 </div>
  -->
-
+<!-- 
  <div class="chat-wrapper">
   
   <h2 class="title">AI Assistant</h2>
 
   <div class="chat-box" #scrollMe>
 
-    <div *ngFor="let msg of messages">
+    <div *ngFor="let msg of messages">-->
 
       <!-- User message -->
-      <div *ngIf="msg.sender === 'user'" class="bubble user-bubble">
+      <!-- <div *ngIf="msg.sender === 'user'" class="bubble user-bubble">
         {{ msg.text }}
-      </div>
+      </div> -->
 
       <!-- AI message -->
-      <div *ngIf="msg.sender === 'ai'" class="bubble ai-bubble">
+      <!-- <div *ngIf="msg.sender === 'ai'" class="bubble ai-bubble">
         {{ msg.text }}
       </div>
 
@@ -35,4 +35,18 @@
     <button (click)="send()">Send</button>
   </div>
 
+</div> --> 
+
+<div class="chat-container">
+  <h2>AI Assistant</h2>
+
+  <div class="chat-box">
+    <div class="user-msg">hi</div>
+    <div class="bot-msg">Hello! How can I assist you today?</div>
+  </div>
+
+  <div class="input-row">
+    <input [(ngModel)]="question" placeholder="Ask something..."/>
+    <button (click)="send()">Send</button>
+  </div>
 </div>

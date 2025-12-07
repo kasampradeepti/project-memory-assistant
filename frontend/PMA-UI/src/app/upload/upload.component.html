@@ -1,0 +1,10 @@
+<div class="upload-wrapper">
+
+  <h2>Upload Project Document</h2>
+
+  <input type="file" (change)="onFileSelected($event)" accept=".pdf,.txt.,.md">
+
+  <button (click)="upload()" [disabled]="!selectedFile">Upload</button>
+  <p class="success" *ngIf="successMsg"> {{successMsg}} </p>
+  <p class="failure" *ngIf="errorMsg"> {{errorMsg}} </p>
+</div>

@@ -1,0 +1,38 @@
+.upload-wrapper {
+  background: #0b1220;
+  border-radius: 16px;
+  padding: 24px;
+  height: fit-content;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+h2 {
+  color: #22c55e;
+  margin-bottom: 16px;
+}
+
+input {
+  margin-bottom: 12px;
+  color: white;
+}
+
+button {
+  background: #22c55e;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.success {
+  color: #4ade80;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.error {
+  color: #f87171;
+  margin-top: 12px;
+}

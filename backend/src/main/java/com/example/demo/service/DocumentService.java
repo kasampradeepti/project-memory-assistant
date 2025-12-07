@@ -25,11 +25,13 @@ public class DocumentService {
 
     private String extractText(MultipartFile file) throws IOException {
         String filename = file.getOriginalFilename();
-        if(filename.endsWith(".pdf")){
+        if(filename != null){
+            if(filename.endsWith(".pdf")){
             return extractPdfText(file);
         } else if (filename.endsWith(".txt")) {
             return new String(file.getBytes());
-        }
+         }
+        }        
         throw new IllegalArgumentException("Unsupported file type");
     }
 

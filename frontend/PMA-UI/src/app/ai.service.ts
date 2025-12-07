@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class AiService {
 
   private apiUrl = 'http://localhost:8080/api/v1/ask';
+  private docUploadUrl = 'http://localhost:8080/api/v1/docs/upload';
 
   constructor(private http: HttpClient) { }
 
@@ -16,5 +17,13 @@ export class AiService {
         responseType: 'text',
         params: {q: question }
       });
+  }
+
+  upload(file:File):Observable<string> {
+    const formData = new FormData;
+    formData.append('file',file);
+    return this.http.post(this.docUploadUrl,formData,{
+      responseType: 'text'
+    });
   }
 }

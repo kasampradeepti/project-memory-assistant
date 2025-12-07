@@ -1,0 +1,9 @@
+/* app.component.scss */
+.main-container {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  padding: 40px;
+}
