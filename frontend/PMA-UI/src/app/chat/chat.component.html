@@ -41,12 +41,17 @@
   <h2>AI Assistant</h2>
 
   <div class="chat-box">
-    <div class="user-msg">hi</div>
-    <div class="bot-msg">Hello! How can I assist you today?</div>
+    <!-- <div class="user-msg">hi</div>
+    <div class="bot-msg">Hello! How can I assist you today?</div> -->
+    <div
+    *ngFor="let msg of messages"
+    [ngClass]="msg.sender === 'user' ? 'user-msg' : 'bot-msg'">
+    {{ msg.text }}
+  </div>
   </div>
 
   <div class="input-row">
-    <input [(ngModel)]="question" placeholder="Ask something..."/>
+    <input [(ngModel)]="question" placeholder="Ask something..." (keyup.enter)="send()"/>
     <button (click)="send()">Send</button>
   </div>
 </div>

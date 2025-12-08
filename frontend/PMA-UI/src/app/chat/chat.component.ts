@@ -36,6 +36,7 @@ send() {
   this.question = '';  // clear input
 
   this.aiservice.ask(q).subscribe(res => {
+    console.log(res);
     this.messages.push({ sender: 'ai', text: res });
   });
 }
