@@ -1,10 +1,43 @@
-<div class="upload-wrapper">
+<!-- <div class="upload-wrapper">
 
   <h2>Upload Project Document</h2>
-
+  <br/>  
   <input type="file" (change)="onFileSelected($event)" accept=".pdf,.txt.,.md">
-
+  <br/> 
+  <br/> 
   <button (click)="upload()" [disabled]="!selectedFile">Upload</button>
   <p class="success" *ngIf="successMsg"> {{successMsg}} </p>
   <p class="failure" *ngIf="errorMsg"> {{errorMsg}} </p>
+</div> -->
+
+<div class="upload-wrapper">
+
+  <h2>Upload Project Document</h2>
+  <br/>
+
+  <input type="file" (change)="onFileSelected($event)" accept=".pdf,.txt,.md" />
+  <br/><br/>
+
+  <button (click)="upload()" [disabled]="!selectedFile">Upload</button>
+
+  <p class="success" *ngIf="successMsg">{{ successMsg }}</p>
+  <p class="failure" *ngIf="errorMsg">{{ errorMsg }}</p>
+
+  <hr />
+
+  <!-- Uploaded File List -->
+  <div *ngIf="uploadedDocs.length > 0" class="docs-container">
+    <h3>Uploaded Documents</h3>
+
+    <div class="doc-row" *ngFor="let doc of uploadedDocs; let i = index">
+      <div class="doc-info">
+        📄 {{ doc.name }}
+        <span class="doc-status" [ngClass]="doc.status">{{ doc.status }}</span>
+      </div>
+      <br/>
+      <button class="delete-btn" (click)="removeDoc(i)">Remove</button>
+    </div>
+  </div>
+
 </div>
+

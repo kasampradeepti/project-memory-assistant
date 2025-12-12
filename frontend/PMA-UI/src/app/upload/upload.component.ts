@@ -10,6 +10,7 @@ export class UploadComponent  {
 
   constructor(private aiservice:AiService) { }
 
+  uploadedDocs: any[] = [];
   selectedFile!: File;
   successMsg = '';
   errorMsg = '';
@@ -22,6 +23,14 @@ export class UploadComponent  {
 
   upload() {
     if(!this.selectedFile) return;
+    const file = this.selectedFile;
+    // Add to local UI list immediately
+    this.uploadedDocs.push({
+      name: file.name
+    });
+
+    const currentIndex = this.uploadedDocs.length - 1;
+
     this.aiservice.upload(this.selectedFile).subscribe({
         next: (res) => {
           this.successMsg='Document uploaded & processed successfully!';
@@ -34,5 +43,7 @@ export class UploadComponent  {
         }
     })
   }
-
+  removeDoc(index: number) {
+    this.uploadedDocs.splice(index, 1);
+  }
 }

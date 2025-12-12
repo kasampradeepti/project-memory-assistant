@@ -1,10 +1,22 @@
+// .chat-container {
+//   background: #0b1220;
+//   border-radius: 16px;
+//   padding: 24px;
+//   display: flex;
+//   flex-direction: column;
+//   height: 600px;
+//   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+// }
+
 .chat-container {
   background: #0b1220;
   border-radius: 16px;
   padding: 24px;
   display: flex;
   flex-direction: column;
-  height: 600px;
+  flex: 1;          /* allows full height inside parent */
+  height: 100%;     /* fill parent */
+  min-height: 0;    /* allows scrolling inside */
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 

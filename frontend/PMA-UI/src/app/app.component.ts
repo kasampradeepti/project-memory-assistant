@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PMA-UI';
+  showUpload = false;
+
+toggleUploadPanel() {
+  this.showUpload = !this.showUpload;
+}
 
 }

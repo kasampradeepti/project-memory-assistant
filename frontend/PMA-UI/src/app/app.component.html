@@ -1,5 +1,35 @@
-<div class="main-container">
+<!-- <div class="main-container">
     <app-chat></app-chat>
     <app-upload></app-upload>
 </div>
+<router-outlet></router-outlet> -->
+
+<div class="app-layout">
+
+  <!-- LEFT: BRANDING -->
+  <aside class="brand-panel">
+    <div class="brand-box">
+      <img src="assets/chatbot_img2.jpg" alt="PMA Logo" class="logo-img" />
+      <h1 class="gradient-heading">Project Memory Assistant</h1>
+      <p class="subtitle">AI Powered RAG System</p>
+    </div>
+  </aside>
+
+  <!-- CENTER: CHAT -->
+  <main class="chat-panel">
+    <button class="upload-toggle-btn" (click)="toggleUploadPanel()">
+  📄 Upload Document
+</button>
+
+    <app-chat></app-chat>
+  </main>
+
+  <!-- RIGHT: UPLOAD -->
+  <aside class="upload-panel" *ngIf="showUpload">
+    <app-upload></app-upload>
+  </aside>
+
+  
+</div>
+
 <router-outlet></router-outlet>
