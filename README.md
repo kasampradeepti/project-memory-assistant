@@ -104,6 +104,14 @@ NOTE : chromdb-> to install need python  -> pip install chromadb -> chroma run -
 
 ## 🖥️ Screenshots
 
+![Home Screen](screenshots/ChatUI.png)
+
+![Chat & Document Upload Screen](screenshots/chatUI_with_UploadComponent.png)
+
+![Document Upload Demo Screen](screenshots/documentUploadScreen.png)
+
+![Chat Demo Screen](screenshots/ChatUI_AfterDocumentUpload.png)
+
 ## 🔐 Data Privacy Considerations
 
   - Uploaded documents are processed locally
